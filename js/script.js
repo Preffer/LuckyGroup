@@ -41,8 +41,29 @@ var strJson = [
 	{"name":"朱旺达","gender":"man","major":"art"}
 ];
 var list=eval("strJson");
-var countNum=countGender=countMajor=0;
+var countMan=countWoman=countArt=countTech=countCulture=0;
 
 function showAll(){
-	alert(list[39].name + list[39].gender + list[39].major);
+
+	var i,para,node,prev;
+
+	for(i=0; i<=list.length; i++){
+		list[i].gender == "man" ? countMan++ : countWoman++;
+		if(list[i].major == "art"){
+			countArt++;
+		} else{
+			if(list[i].major == "tech"){
+				countTech++;
+			}
+			else {
+				countCulture++;
+			}
+		}
+		prev = document.getElementById("head");
+		para = document.createElement("p");
+		node = document.createTextNode(list[i].name + " " + list[i].gender + " " + list[i].major + " " + "Man:" + countMan + " " + "Woman:" + countWoman + " " + "Art:" + countArt + " " + "Tech:" + countTech + " " + "Culture:" + countCulture);
+		para.appendChild(node);
+		prev.appendChild(para);
+		prev=para;
+	};
 };
