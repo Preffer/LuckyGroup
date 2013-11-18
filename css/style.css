@@ -1,0 +1,18 @@
+body{background: url(../img/bg.png) repeat fixed;}
+.pagination{
+	left: 25%;
+	position: absolute;
+}
+.pagination ul{
+	margin: 1.8em;
+}
+.footer{
+	height: 100px;
+}
+.footer{
+	height: 50px;
+}
+#start{
+	font-size: 1.5em;
+	letter-spacing: 2px;
+}

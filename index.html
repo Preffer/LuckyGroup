@@ -4,13 +4,41 @@
 	<meta charset="UTF-8"/>
 	<title>LuckyGroup</title>
 	<link rel="stylesheet" href="./css/style.css"/>
-	<script src="./js/jquery-2.0.3.js"></script>
+	<link rel="stylesheet" href="./css/bootstrap.min.css"/>
+	<script src="./js/jquery-2.0.3.min.js"></script>
+	<script src="./js/bootstrap.min.js"></script>
 	<script src="./js/script.js"></script>
 </head>
 <body>
-	<button type="button" onclick="showAll()">Show All</button>
-	<p id="head">showAll as Follows:</p>
-	<button type="button" onclick="group()">Shuffle It</button>
-	<p id="result">Result as Follows</p>
+	<div class="footer"></div>
+	<div class="container">
+		<div class="row">
+    		<div class="span12 btn btn-primary btn-large" id="start">
+    			<p>LuckyGroup</p>
+    			<p>人算不如天算</p>
+    		</div>
+    	</div>
+    	<div class="pagination pagination-large">
+    		<ul id="group0">
+    			<li><a class="btn btn-inverse">第一组</a></li>
+    		</ul><br>
+    		<ul id="group1">
+    			<li><a class="btn btn-primary">第二组</a></li>
+    		</ul><br>
+    		<ul id="group2">
+    			<li><a class="btn btn-info">第三组</a></li>
+    		</ul><br>
+    		<ul id="group3">
+    			<li><a class="btn btn-success">第四组</a></li>
+    		</ul><br>
+    		<ul id="group4">
+    			<li><a class="btn btn-warning">第五组</a></li>
+    		</ul><br>
+    		<ul id="group5">
+    			<li><a class="btn btn-danger">第六组</a></li>
+    		</ul><br>
+    		<div class="footer"></div>
+    	</div>
+    </div>
 </body>
 </html>

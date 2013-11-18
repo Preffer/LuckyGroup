@@ -43,13 +43,12 @@ var strJson = [
 
 var groups=6;
 //data area end.
-
 var list=eval("strJson");
 var members=list.length;
 
-function group(){
+var i,t;
+$(document).ready(function(){
 	//init put order
-	var i;
 	var order = new Array();
 	for(i=0; i<members; i++){
 		order[i]=i;
@@ -76,6 +75,19 @@ function group(){
 			col++;
 		}
 	}
-	//layout
-	alert("200");
-}
+	var done=0;
+	$("#start").click(function(){
+		if(done == 1){
+			alert("已经分组了哦");	
+		} else{
+			for(i=0; i<groups; i++){
+				for(t=0; t<groupmap[i].length; t++){
+					 $("#group"+i).append("<li><a>" + groupmap[i][t] + "</a></li>");
+				}
+			}
+			done=1;
+		}
+	});
+});
+
+
