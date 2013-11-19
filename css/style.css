@@ -1,7 +1,7 @@
-body{background: url(../img/bg.png) repeat fixed;}
-.pagination{left: 25%; position: absolute;}
-.pagination ul{margin: 1.8em;}
-.footer{height: 70px;}
-.head{height: 50px;}
-.target{display: none;}
-#start{font-size: 1.5em; letter-spacing: 2px;}
+body{background: url(../img/bg.png) repeat fixed; font-family: "Hiragino Sans GB", "Microsoft YaHei", "Wenquanyi Micro Hei", "WenQuanYi Micro Hei Mono", "WenQuanYi Zen Hei", "WenQuanYi Zen Hei", "Apple LiGothic Medium", "SimHei", "ST Heiti", "WenQuanYi Zen Hei Sharp";}
+.pagination{left:25%; position:absolute;}
+.pagination ul{margin:1.8em}
+.foot{bottom:0.5em; position:absolute; width:100%; color:#BBB; text-align:center;}
+.target{display:none}
+.container{margin-top:3em}
+#start{font-size:1.6em; letter-spacing:0.3em;}

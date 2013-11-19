@@ -44,12 +44,11 @@ var groups=6;
 //data area end.
 var list=eval("strJson");
 var members=list.length;
-var i,t;
-
+var i=row=col=0;
 //init groupmap to global var
 var groupmap = new Array();
-for(i=0; i<groups; i++){
-	groupmap[i] = new Array();
+for(row=0; row<groups; row++){
+	groupmap[row] = new Array();
 }
 $(document).ready(function(){
 	//init put order
@@ -58,17 +57,15 @@ $(document).ready(function(){
 		order[i]=i;
 	}
 	//random
-	for(i=0; i<5; i++){
+	for(row=0; row<5; row++){
 		order.sort(function(){  
     		return Math.random()-0.5;  
 		});
 	}	
 	//start put
-	var row,col;
-	row=col=0
+	row=col=0;
 	for(i=0; i<members; i++){
-		groupmap[row][col] = list[order[i]].name;
-		row++;
+		groupmap[row++][col] = list[order[i]].name;
 		if(row>=groups){
 			row-=groups;
 			col++;
@@ -79,16 +76,19 @@ $(document).ready(function(){
 		if(done == 1){
 			alert("已经分组了哦");	
 		} else{
-			for(i=0; i<groups; i++){
-				for(t=0; t<groupmap[i].length; t++){
-					setTimeout(function(){
-						alert(i + " " + t);
-						$("#group"+i).append("<li><a class='target'>" + groupmap[i][t] + "</span></li>");
-						$(".target").slideDown(500);
-					},500);
-				}
-			}
+			row=col=0;
 			done=1;
+			handle=setInterval(function(){
+				$("#group"+row).append("<li><a class='target'>" + groupmap[row][col++] + "</span></li>");
+				$(".target").slideDown(250);
+				if(col>=groupmap[row].length){
+					col=0;
+					row++;
+					if(row>=groups){
+						clearInterval(handle);
+					}
+				}
+			},300);
 		}
 	});
 });
