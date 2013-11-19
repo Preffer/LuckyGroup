@@ -40,13 +40,17 @@ var strJson = [
 	{"name":"沈捷","gender":"woman","major":"cultural"},
 	{"name":"朱旺达","gender":"man","major":"art"}
 ];
-
 var groups=6;
 //data area end.
 var list=eval("strJson");
 var members=list.length;
-
 var i,t;
+
+//init groupmap to global var
+var groupmap = new Array();
+for(i=0; i<groups; i++){
+	groupmap[i] = new Array();
+}
 $(document).ready(function(){
 	//init put order
 	var order = new Array();
@@ -58,12 +62,7 @@ $(document).ready(function(){
 		order.sort(function(){  
     		return Math.random()-0.5;  
 		});
-	}
-	//init groupmap
-	var groupmap = new Array();
-	for(i=0; i<groups; i++){
-		groupmap[i] = new Array();
-	}
+	}	
 	//start put
 	var row,col;
 	row=col=0
@@ -82,12 +81,14 @@ $(document).ready(function(){
 		} else{
 			for(i=0; i<groups; i++){
 				for(t=0; t<groupmap[i].length; t++){
-					 $("#group"+i).append("<li><a>" + groupmap[i][t] + "</a></li>");
+					setTimeout(function(){
+						alert(i + " " + t);
+						$("#group"+i).append("<li><a class='target'>" + groupmap[i][t] + "</span></li>");
+						$(".target").slideDown(500);
+					},500);
 				}
 			}
 			done=1;
 		}
 	});
 });
-
-
