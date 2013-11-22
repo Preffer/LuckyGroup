@@ -1,48 +1,7 @@
 //define data
-var strJson = [
-	{"name":"陈瑞峰","gender":"man","major":"art"},
-	{"name":"王一鹤","gender":"woman","major":"art"},
-	{"name":"陈瑞","gender":"man","major":"art"},
-	{"name":"潘琼怡","gender":"woman","major":"art"},
-	{"name":"孙继超","gender":"man","major":"art"},
-	{"name":"唐洋","gender":"man","major":"art"},
-	{"name":"上官福豪","gender":"man","major":"art"},
-	{"name":"金雪璐","gender":"woman","major":"art"},
-	{"name":"孙敉","gender":"woman","major":"cultural"},
-	{"name":"林意桥","gender":"woman","major":"cultural"},
-	{"name":"刘雨","gender":"woman","major":"cultural"},
-	{"name":"王宇韬","gender":"woman","major":"cultural"},
-	{"name":"李家城","gender":"man","major":"cultural"},
-	{"name":"杨云平","gender":"woman","major":"tech"},
-	{"name":"周星辰","gender":"man","major":"tech"},
-	{"name":"李欣语","gender":"woman","major":"art"},
-	{"name":"孔益萍","gender":"woman","major":"tech"},
-	{"name":"严玉棋","gender":"woman","major":"tech"},
-	{"name":"尹婷","gender":"woman","major":"tech"},
-	{"name":"朱圣日美","gender":"woman","major":"art"},
-	{"name":"詹思成","gender":"man","major":"tech"},
-	{"name":"张亦驰","gender":"man","major":"tech"},
-	{"name":"杨珖","gender":"man","major":"tech"},
-	{"name":"李昊","gender":"man","major":"tech"},
-	{"name":"戴凯奇","gender":"man","major":"tech"},
-	{"name":"高泊宁","gender":"man","major":"art"},
-	{"name":"冯思睿","gender":"man","major":"tech"},
-	{"name":"钱晨辉","gender":"man","major":"tech"},
-	{"name":"曹舜","gender":"man","major":"tech"},
-	{"name":"汪羿","gender":"woman","major":"tech"},
-	{"name":"潘启桢","gender":"man","major":"tech"},
-	{"name":"黄羽众","gender":"man","major":"tech"},
-	{"name":"林津玮","gender":"man","major":"tech"},
-	{"name":"林思远","gender":"man","major":"tech"},
-	{"name":"申正","gender":"man","major":"art"},
-	{"name":"郭磊","gender":"man","major":"tech"},
-	{"name":"吴镓成","gender":"man","major":"tech"},
-	{"name":"沈捷","gender":"woman","major":"cultural"},
-	{"name":"朱旺达","gender":"man","major":"art"}
-];
-var groups=6;
+var list = new Array("陈瑞峰","王一鹤","陈瑞","潘琼怡","孙继超","唐洋","上官福豪","金雪璐","孙敉","林意桥","刘雨","王宇韬","李家城","杨云平","周星辰","李欣语","孔益萍","严玉棋","尹婷","朱圣日美","詹思成","张亦驰","杨珖","李昊","戴凯奇","高泊宁","冯思睿","钱晨辉","曹舜","汪羿","潘启桢","黄羽众","林津玮","林思远","申正","郭磊","吴镓成","沈捷","朱旺达","徐轶文","杨玲","诸葛熹","程冬筱","舒婷","李江纯","黄轶群","戴泳","林丹燕 ","吴晓亮","李则慧","许琢璞","洪意涵","吴佳阳");
+var groups = 9;
 //data area end.
-var list=eval("strJson");
 var members=list.length;
 var i=row=col=0;
 //init groupmap to global var
@@ -65,7 +24,7 @@ $(document).ready(function(){
 	//start put
 	row=col=0;
 	for(i=0; i<members; i++){
-		groupmap[row++][col] = list[order[i]].name;
+		groupmap[row++][col] = list[order[i]];
 		if(row>=groups){
 			row-=groups;
 			col++;
