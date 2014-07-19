@@ -9,15 +9,25 @@
 <body>
 	<div class="container">
         <div class="row">
-            <div class="col-md-12 text-center" id="tip_choose">
+            <div class="col-md-12 text-center" id="tip">
                 Please choose the CSV file to group :)
             </div>
         </div>
         <div class="row">
-            <div class="col-md-12 text-center" id="choose_wrapper">
-                <button type="button" class="btn btn-success btn-lg">
+            <div class="col-md-12 text-center" id="chooseWrapper">
+                <button type="button" class="btn btn-success btn-lg" id="chooseButton">
                     Choose File | <span class="glyphicon glyphicon-chevron-right"></span>
                 </button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12" id="rangeChooser">
+                <p>Select group count<p>
+                <input id="groupRange" type="range" name="range" min="1" max="15" step="1" value="1" />
+                <p id="fileName"></p>
+                <p id="total"></p>
+                <p id="group"></p>
+                <p id="upto"></p>
             </div>
         </div>
         <div class="row">
@@ -27,6 +37,8 @@
         </div>
     </div>
 
+
+<input id="fileButton" type="file" onchange="getFileContent(this.files)" /> 
 <script src="bower_components/jquery/dist/jquery.min.js"></script>
 <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 <script src="js/script.js"></script>
