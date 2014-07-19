@@ -1,7 +1,1 @@
-body{background: url(../img/bg.png) repeat fixed; font-family: "Hiragino Sans GB", "Microsoft YaHei", "Wenquanyi Micro Hei", "WenQuanYi Micro Hei Mono", "WenQuanYi Zen Hei", "WenQuanYi Zen Hei", "Apple LiGothic Medium", "SimHei", "ST Heiti", "WenQuanYi Zen Hei Sharp";}
-.pagination{left:25%; position:absolute;}
-.pagination ul{margin:1.8em}
-.foot{bottom:-30%; position:absolute; width:100%; padding-bottom:1em; color:#BBB; text-align:center;}
-.target{display:none}
-.container{margin-top:3em}
-#start{font-size:1.6em; letter-spacing:0.3em;}
+body{background:url(../img/bg.png) repeat fixed;font-family:"Hiragino Sans GB","Microsoft YaHei","Wenquanyi Micro Hei","WenQuanYi Micro Hei Mono","WenQuanYi Zen Hei","WenQuanYi Zen Hei","Apple LiGothic Medium","SimHei","ST Heiti","WenQuanYi Zen Hei Sharp"}#tip_choose{margin-top:15%;color:#fff;font-size:2.5rem}#choose_wrapper{margin-top:3%}#slogan{margin-top:15%;width:75%}
