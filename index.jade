@@ -1,0 +1,40 @@
+doctype html
+html
+	head
+		meta(charset="UTF-8")
+		meta(http-equiv="X-UA-Compatible" content="IE=edge,chrome=1")
+		meta(name="description" content="LuckyGroup is a tool to help us group randomly")
+		meta(name="renderer" content="webkit")
+		title LuckyGroup
+		link(rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css")
+		link(rel="stylesheet" href="css/style.css")
+	body
+		div.container
+			div.row
+				div#tip(class="col-md-12 text-center") Please choose the CSV file to group :)
+			
+			div.row
+				div#chooseWrapper(class="col-md-12 text-center")
+					button#chooseButton(type="button" class="btn btn-success btn-lg") Choose File |
+						span(class="glyphicon glyphicon-chevron-right")
+
+			div.row
+				div#rangeChooser(class="col-md-12")
+					p Select group count
+					input#groupRange(type="range" name="range" min="1" max="15" step="1" value="1")
+					p#fileName
+					p#total
+					p#group
+					p#upto
+
+			div.row
+				div#slogan(class="btn btn-primary btn-xs center-block")
+					h1 LuckyGroup
+						sup.small 2.0
+
+			div(class="pagination pagination-large")
+
+	input#fileButton(type="file" onchange="getFileContent(this.files)")
+	script(src="bower_components/jquery/dist/jquery.min.js")
+	script(src="bower_components/bootstrap/dist/js/bootstrap.min.js")
+	script(src="js/script.js")

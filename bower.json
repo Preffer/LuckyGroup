@@ -1,6 +1,6 @@
 {
   "name": "LuckyGroup",
-  "description": "a tool to help us randomly make group",
+  "description": "LuckyGroup is a tool to help us group randomly",
   "version": "0.0.1",
   "homepage": "http://www.idi.zju.edu.cn/lucky",
   "license": "Apache License",
