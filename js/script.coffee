@@ -26,7 +26,7 @@ window.getFileContent = (file) ->
 		window.nameList.push(last) if last.length
 
 		$('#groupRange').attr('max', Math.ceil(window.nameList.length / 2))
-		$('#fileName').html("Source file: #{file[0].name}")
+		$('#fileName').html("Source file: <b>#{file[0].name}</b>")
 		$('#total').html("<b>#{window.nameList.length}</b> people in total")
 		
 		updateRange()
@@ -47,37 +47,32 @@ makeGroup = ->
 
 	#use hack there, that btnClass actually start from [1], due to i%5+1 method
 	btnClass = ['', 'btn-info', 'btn-success', 'btn-warning', 'btn-danger']
-	rowLimit = $('#groupRange').val()
+	groups = $('#groupRange').val()
 	html = ''
-	for i in [1..rowLimit]
-		html += "<ul id=\"group#{i}\"><li><a class=\"btn #{btnClass[i%4 + 1]}\">第#{i}组</a></li></ul><br />"
+	for i in [1..groups]
+		html += "<ul id='group#{i}'><li><a class='btn #{btnClass[i%4 + 1]}'>第#{i}组</a></li></ul><br />"
 	
 	$('.pagination').html(html)
 	
-	#init put order & random
-	order = [0...window.nameList.length]
-	order.sort ->
-		return Math.random() - 0.5
-	
-	#start put
-	groupmap = []
-	for row in [1..rowLimit]
-		groupmap[row] = []
+	#writing to groupMap
+	groupMap = []
+	for row in [1..groups]
+		groupMap[row] = []
 
 	row = col = 1
 	for i in [0..window.nameList.length]
-		groupmap[row++][col] = window.nameList[order[i]]
-		if row > rowLimit
+		groupMap[row++][col] = window.nameList.pop()
+		if row > groups
 			row = 1
 			col++
 
 	row = col = 1
 	handle = setInterval ->
-		$("#group#{row}").append("<li><a class='target btn btn-primary'>#{groupmap[row][col++]}</span></li>")
+		$("#group#{row}").append("<li><a class='target btn btn-primary'>#{groupMap[row][col++]}</span></li>")
 		$(".target").slideDown(250)
-		if col >= groupmap[row].length
+		if col >= groupMap[row].length
 			col = 1
 			row++
-			if row > rowLimit
+			if row > groups
 				clearInterval(handle)
 	, 300
